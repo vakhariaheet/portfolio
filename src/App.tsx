@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import './App.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	useEffect(() => {
+		setTimeout(() => {
+			window.location.replace('https://linktr.ee/vakharia_heet');
+		}, 5000);
+	}, []);
+	return (
+		<div className='container'>
+			<p>Portfolio</p>
+			<p className='comming-soon'>Comming Soon</p>
+			<p>Page will be automatically redirect to Lintr.ee in 5s</p>
+			<a href='https://linktr.ee/vakharia_heet'>My Projects(Linktree)</a>
+		</div>
+	);
 }
 
 export default App;
