@@ -1,0 +1,19 @@
+.projects {
+	margin-bottom: 5rem;
+	&__heading {
+		font-size: 6rem;
+		margin: 2rem;
+		font-family: 'Dancing Script', cursive;
+		text-align: center;
+	}
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 40rem);
+		justify-content: center;
+		gap: 3rem;
+		width: 100%;
+		@media (max-width: 1100px) {
+			grid-template-columns: repeat(auto-fit, 30rem);
+		}
+	}
+}
