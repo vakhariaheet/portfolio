@@ -1,0 +1,37 @@
+.footer {
+	height: max-content;
+	width: 100%;
+	background-color: #000;
+	padding: 2rem;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	.mantra {
+		font-size: 2rem;
+		text-align: center;
+		color: #fff;
+
+		&:last-of-type {
+			position: relative;
+			&::after {
+				content: '-  श्रीमद् भगवद्गीता';
+				display: block;
+				position: relative;
+				left: 50%;
+				font-size: 1.5rem;
+				opacity: 0.6;
+			}
+		}
+	}
+	.copyright {
+		color: #fff;
+		opacity: 0.5;
+		text-align: center;
+		width: 100%;
+		font-size: 1.3rem;
+		bottom: 1rem;
+		margin-top: 3rem;
+	}
+}

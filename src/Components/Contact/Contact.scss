@@ -1,0 +1,129 @@
+.contact {
+	padding: 5rem;
+	@media (max-width: 1100px) {
+		padding: 2rem;
+	}
+	&__heading {
+		font-size: 6rem;
+		margin: 2rem;
+		font-family: 'Dancing Script', cursive;
+		text-align: center;
+	}
+	&__form {
+		display: grid;
+		grid:
+			'name email'
+			'subject subject'
+			'body body'
+			'button button';
+		gap: 2rem;
+		[for='name'] {
+			grid-area: name;
+		}
+		[for='email'] {
+			grid-area: email;
+		}
+		[for='subject'] {
+			grid-area: subject;
+		}
+		[for='body'] {
+			grid-area: body;
+		}
+		button {
+			grid-area: button;
+		}
+		@media (max-width: 1100px) {
+			grid:
+				'name name'
+				'email email'
+				'subject subject'
+				'body body'
+				'button button';
+		}
+	}
+	&__input {
+		width: 100%;
+
+		padding: 1.5rem 1rem;
+		font-size: 1.8rem;
+		font-family: 'Quando', serif;
+		border: none;
+		border-radius: 0.5rem;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+			rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+		&:focus {
+			outline: 1px solid #725ac1ff;
+		}
+	}
+	&__social {
+		&--text {
+			font-size: 3rem;
+			margin: 3rem 4rem;
+
+			font-family: 'Quando', serif;
+		}
+		&--icon {
+			height: 6rem;
+			width: auto;
+			opacity: 0.8;
+			transition: all 0.3s ease;
+			cursor: pointer;
+			padding: 1rem;
+			border-radius: 0.5rem;
+			&:hover {
+				opacity: 1;
+				transform: scale(1.1);
+			}
+			&:focus {
+				outline: 1px solid #725ac1ff;
+			}
+			svg {
+				height: 100%;
+				width: auto;
+			}
+
+			&s {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				width: 100%;
+				margin: 3rem 0;
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+	#body {
+		height: 40rem;
+		resize: vertical;
+		min-height: 20rem;
+	}
+	&__submit {
+		justify-self: center;
+		padding: 0.75rem 1rem;
+		max-width: 30rem;
+		width: 100%;
+		height: 5rem;
+		background-color: #fff;
+		border: none;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+			rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+		font-size: 2.5rem;
+		font-family: 'Crimson Text', serif;
+		cursor: pointer;
+		border-radius: 1rem;
+		opacity: 1;
+		transition: all 0.2s ease;
+		&:focus {
+			outline: 1px solid #725ac1ff;
+		}
+		&:hover {
+			transform: scale(1.05) translateY(-3px);
+		}
+		&:active {
+			box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+				rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+			opacity: 0.8;
+		}
+	}
+}
