@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { scrollTo } from '../../utils/utils';
 import { motion, Variants } from 'framer-motion';
 import './Navbar.scss';
@@ -12,8 +12,6 @@ const Navbar: React.FC<NavbarProps> = ({
 	homeRef,
 	projectsRef,
 }) => {
-	const ref = useRef<HTMLDivElement>(null);
-
 	const parent: Variants = {
 		show: {
 			transition: {

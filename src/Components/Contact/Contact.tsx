@@ -19,7 +19,6 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 		once: true,
 		amount: 'some',
 	});
-	const ref = useRef<HTMLDivElement>(null);
 
 	const parent: Variants = {
 		show: {

@@ -40,7 +40,7 @@ export const projects: Project[] = [
 		image: 'https://i.imgur.com/JnemTAN.png',
 	},
 	{
-		name: 'Covid India',
+		name: 'Covid India REST API',
 		description:
 			'Covid India gives covid19 stats of India and the Indian States. It web scrapes MoHFW, Government of India web site.It made using typescript,jsdom and expressjs.',
 		githubURL: 'https://github.com/vakhariaheet/covidapi',

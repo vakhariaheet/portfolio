@@ -58,7 +58,7 @@ const Home: React.FC<HomeProps> = ({ setHomeRef }) => {
 					I am a passionate Full-Stack web developer based in India 🇮🇳. I love
 					creating and designing web apps in typescript. In my free time, I read
 					books and Harry Potter Fanfiction. I am currently doing my{' '}
-					{getEduInfo().degree} in Information Technology from GLS University(
+					{getEduInfo().degree} in Information Technology from GLS University (
 					{getEduInfo().year} year)
 				</motion.p>
 				<motion.button
