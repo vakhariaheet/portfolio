@@ -1,3 +1,5 @@
+import { type } from 'os';
+
 declare module '*.pdf';
 
 export type ScrollToPointerProps = {
@@ -22,4 +24,8 @@ export interface Project {
 	url: string;
 	description: string;
 	tags: string[];
+}
+export interface Skill {
+	name: string;
+	type?: 'frontend' | 'backend';
 }

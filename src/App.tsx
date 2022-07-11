@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
-
 import './App.scss';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';

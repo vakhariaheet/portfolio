@@ -61,9 +61,23 @@ const Home: React.FC<HomeProps> = ({ setHomeRef }) => {
 					{getEduInfo().degree} in Information Technology from GLS University(
 					{getEduInfo().year} year)
 				</motion.p>
-				<button className='home__cta' onPointerDown={onResumeDownload}>
+				<motion.button
+					initial={{
+						y: -50,
+						opacity: 0,
+					}}
+					animate={{
+						y: 0,
+						opacity: 1,
+						transition: {
+							duration: 0.4,
+						},
+					}}
+					className='home__cta'
+					onPointerDown={onResumeDownload}
+				>
 					Download Resume
-				</button>
+				</motion.button>
 			</div>
 			<div className='home__image'>
 				<motion.img

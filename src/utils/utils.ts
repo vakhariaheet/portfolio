@@ -13,19 +13,17 @@ export const scrollTo: ScrollTo = ({
 	key = 'Enter',
 }) => {
 	if (ele === null) return;
-	if (eventType === 'pointer')
+	if (eventType === 'pointer') {
 		return ele.scrollIntoView({
 			behavior: 'smooth',
-			block: 'center',
-			inline: 'center',
 		});
+	}
 	if (eventType === 'key') {
-		if (event.key === key)
+		if (event.key === key) {
 			return ele.scrollIntoView({
 				behavior: 'smooth',
-				block: 'center',
-				inline: 'center',
 			});
+		}
 	}
 	return;
 };

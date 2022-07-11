@@ -1,4 +1,4 @@
-import { Project } from '../types';
+import { Project, Skill } from '../types';
 
 export const projects: Project[] = [
 	{
@@ -56,5 +56,68 @@ export const projects: Project[] = [
 		tags: ['NPM', 'JEST', 'Typescript'],
 		url: 'https://npmjs.org/custom-js-console',
 		image: 'https://i.imgur.com/FMMIGeG.png',
+	},
+];
+export const skills: Skill[] = [
+	{
+		type: 'frontend',
+		name: 'HTML',
+	},
+	{
+		type: 'frontend',
+		name: 'CSS',
+	},
+	{
+		type: 'backend',
+		name: 'ExpressJS',
+	},
+	{
+		type: 'frontend',
+		name: 'JavaScript',
+	},
+	{
+		type: 'backend',
+		name: 'NodeJS',
+	},
+	{
+		type: 'frontend',
+		name: 'SCSS',
+	},
+	{
+		type: 'frontend',
+		name: 'HTML',
+	},
+	{
+		type: 'frontend',
+		name: 'HTML',
+	},
+	{
+		name: 'Web Designing',
+	},
+	{
+		type: 'frontend',
+		name: 'TypeScript',
+	},
+	{
+		name: 'PuppeteerJS(Web Scrapping)',
+	},
+	{
+		type: 'backend',
+		name: 'MySQL',
+	},
+	{
+		type: 'frontend',
+		name: 'PWA',
+	},
+	{
+		type: 'backend',
+		name: 'MongoDB',
+	},
+	{
+		type: 'frontend',
+		name: 'React JS',
+	},
+	{
+		name: 'JEST',
 	},
 ];

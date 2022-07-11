@@ -1,7 +1,8 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction, useRef, useState } from 'react';
 import './Contact.scss';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
+import { motion, useInView, Variants } from 'framer-motion';
 export interface ContactProps {
 	setContactRef: Dispatch<SetStateAction<HTMLDivElement | null>>;
 }
@@ -13,7 +14,39 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 		subject: '',
 		body: '',
 	});
+	const containerRef = useRef<HTMLFormElement>(null);
+	const inView = useInView(containerRef, {
+		once: true,
+		amount: 'some',
+	});
+	const ref = useRef<HTMLDivElement>(null);
 
+	const parent: Variants = {
+		show: {
+			transition: {
+				staggerChildren: 0.1,
+				staggerDirection: -1,
+			},
+		},
+		hidden: {
+			transition: {
+				staggerDirection: -1,
+			},
+		},
+	};
+	const logo: Variants = {
+		show: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.4,
+			},
+		},
+		hidden: {
+			y: 50,
+			opacity: 0,
+		},
+	};
 	const onFormSubmit = async (event: SubmitEvent) => {
 		event.preventDefault();
 
@@ -43,8 +76,40 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 	};
 	return (
 		<div className='contact' ref={setContactRef}>
-			<h4 className='contact__heading'>Contact Me</h4>
-			<form className='contact__form' onSubmit={onFormSubmit as any}>
+			<motion.h4
+				initial={{
+					y: -100,
+					opacity: 0,
+					scale: 0.8,
+				}}
+				animate={
+					inView && {
+						y: 0,
+						opacity: 1,
+						scale: 1,
+					}
+				}
+				className='contact__heading'
+			>
+				Contact Me
+			</motion.h4>
+			<motion.form
+				className='contact__form'
+				onSubmit={onFormSubmit as any}
+				ref={containerRef}
+				initial={{
+					x: -100,
+					opacity: 0,
+				}}
+				animate={inView && { x: 0, opacity: 1 }}
+				transition={{
+					delay: 0.2,
+					type: 'spring',
+					damping: 10,
+					stiffness: 100,
+					duration: 0.3,
+				}}
+			>
 				<label htmlFor='name'>
 					<input
 						type='text'
@@ -101,15 +166,21 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 				<button className='contact__submit' type='submit'>
 					Submit
 				</button>
-			</form>
-			<div className='contact__social'>
-				<div className='contact__social--icons'>
-					<div
+			</motion.form>
+			<motion.div className='contact__social'>
+				<motion.div
+					className='contact__social--icons'
+					variants={parent}
+					initial='hidden'
+					animate={inView ? 'show' : 'hidden'}
+				>
+					<motion.div
 						className='contact__social--icon'
 						tabIndex={0}
 						onPointerDown={() =>
 							window.open('https://twitter.com/vakharia_heet')
 						}
+						variants={logo}
 					>
 						<svg
 							viewBox='0 0 236 192'
@@ -122,13 +193,14 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 								fill='#1B9DF0'
 							/>
 						</svg>
-					</div>
-					<div
+					</motion.div>
+					<motion.div
 						className='contact__social--icon'
 						tabIndex={0}
 						onPointerDown={() =>
 							window.open('https://codepen.io/vakharia_heet')
 						}
+						variants={logo}
 					>
 						<svg
 							enableBackground='new 0 0 128 128'
@@ -149,11 +221,12 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 								id='Codepen_1_'
 							/>
 						</svg>
-					</div>
-					<div
+					</motion.div>
+					<motion.div
 						className='contact__social--icon'
 						tabIndex={0}
 						onPointerDown={() => window.open('https://github.com/vakhariaheet')}
+						variants={logo}
 					>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -169,8 +242,8 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 								fill='#1B1F23'
 							/>
 						</svg>
-					</div>
-					<div
+					</motion.div>
+					<motion.div
 						className='contact__social--icon'
 						tabIndex={0}
 						onPointerDown={() =>
@@ -178,6 +251,7 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 								'https://meta.stackoverflow.com/users/13262683/heet-vakharia',
 							)
 						}
+						variants={logo}
 					>
 						<svg
 							viewBox='0 0 100 118'
@@ -194,13 +268,14 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 								fill='#F48024'
 							/>
 						</svg>
-					</div>
-					<div
+					</motion.div>
+					<motion.div
 						className='contact__social--icon'
 						tabIndex={0}
 						onPointerDown={() =>
 							window.open('https://www.linkedin.com/in/vakhariaheet/')
 						}
+						variants={logo}
 					>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -236,13 +311,14 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 								/>
 							</g>
 						</svg>
-					</div>
-					<div
+					</motion.div>
+					<motion.div
 						className='contact__social--icon'
 						tabIndex={0}
 						onPointerDown={() =>
 							window.open('https://instagram.com/vakharia_heet')
 						}
+						variants={logo}
 					>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -312,9 +388,9 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 								</g>
 							</g>
 						</svg>
-					</div>
-				</div>
-			</div>
+					</motion.div>
+				</motion.div>
+			</motion.div>
 		</div>
 	);
 };
