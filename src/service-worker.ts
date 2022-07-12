@@ -24,8 +24,8 @@ clientsClaim();
 // even if you decide not to use precaching. See https://cra.link/PWA
 precacheAndRoute([
 	...self.__WB_MANIFEST,
-	'https://fonts.googleapis.com/css2?family=Cookie&family=Crimson+Text:ital@0;1&family=Dancing+Script&family=Quando&display=swap',
 	'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0',
+	'https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Dancing+Script&family=Itim&family=Quando&display=swap',
 ]);
 
 // Set up App Shell-style routing, so that all navigation requests
