@@ -6,10 +6,23 @@ const Document = () => {
 			<Head>
 				<meta charSet='utf-8' />
 
-				<meta name='theme-color' content='#000000' />
+				<link
+					rel='apple-touch-icon'
+					sizes='180x180'
+					href='/icons/apple-touch-icon.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='32x32'
+					href='/icons/32x32.png'
+				/>
+				<link rel='icon' type='image/png' sizes='16x16' href='/16x16.png' />
+				<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
+				<meta name='msapplication-TileColor' content='#da532c' />
+				<meta name='theme-color' content='#fff' />
 				<link rel='manifest' href='/manifest.json' />
-				<link rel='apple-touch-icon' href='/logo.png' />
-				<link rel='icon' href='/logo.png' />
+				<link rel='icon' type='image/x-icon' href='/icons/favicon.ico' />
 				{/* Fonts */}
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 				<link

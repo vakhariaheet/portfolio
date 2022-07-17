@@ -7,8 +7,7 @@ export const projects: Project[] = [
 			'Covid tracker shows you global covid stats and country-specific covid stats with graphs and maps. It is a PWA made using react, typescript, Mapbox, chartjs and powered by disease.sh covid API',
 		githubURL: 'https://github.com/vakhariaheet/NotAnOrdinaryCovidTracker',
 		url: 'https://covidtracker.heetvakharia.in',
-		image:
-			'https://raw.githubusercontent.com/vakhariaheet/NotAnOrdinaryCovidTracker/master/public/images/preview.png',
+		image: '/images/covidtracker.webp',
 		tags: ['React JS', 'Typescript', 'PWA'],
 	},
 	{
@@ -18,15 +17,14 @@ export const projects: Project[] = [
 		githubURL: 'https://github.com/vakhariaheet/verifierjs',
 		url: 'https://npmjs.org/verifierjs',
 		tags: ['NPM', 'Typescript', 'JEST'],
-		image: 'https://i.imgur.com/ygryF9u.png',
+		image: '/images/verifier.webp',
 	},
 	{
 		name: 'Face Recognition App',
 		description:
 			'A face recognition app which recognises faces in the provided image(URL). It also has dark mode and light mode changing ability. It is made using VueJs and powered by faceplusplus API',
 		githubURL: 'https://github.com/vakhariaheet/face-recognition-app',
-		image:
-			'https://github.com/vakhariaheet/face-recognition-app/blob/6071cbc51b20d74949559190cec9e1f23c50f85c/public/preview.png?raw=true',
+		image: '/images/facerecog.webp',
 		tags: ['Vue JS'],
 		url: 'https://facerecognition.heetvakharia.in/',
 	},
@@ -37,7 +35,7 @@ export const projects: Project[] = [
 		githubURL: 'https://github.com/vakhariaheet/codepen-clone',
 		tags: ['Firebase', 'React JS', 'GSAP'],
 		url: 'https://codepen.heetvakharia.in',
-		image: 'https://i.imgur.com/JnemTAN.png',
+		image: '/images/codepen.webp',
 	},
 	{
 		name: 'Covid India REST API',
@@ -46,7 +44,7 @@ export const projects: Project[] = [
 		githubURL: 'https://github.com/vakhariaheet/covidapi',
 		tags: ['Express JS', 'JS DOM', 'Typescript'],
 		url: 'https://rapidapi.com/heetkv/api/covid-india2/',
-		image: 'https://i.imgur.com/nJXS4Ib.png',
+		image: '/images/covidapi.webp',
 	},
 	{
 		name: 'Custom JS Console (NPM Package)',
@@ -55,7 +53,7 @@ export const projects: Project[] = [
 		githubURL: 'https://github.com/vakhariaheet/custom-js-console',
 		tags: ['NPM', 'JEST', 'Typescript'],
 		url: 'https://npmjs.org/custom-js-console',
-		image: 'https://i.imgur.com/FMMIGeG.png',
+		image: '/images/console.webp',
 	},
 ];
 export const skills: Skill[] = [

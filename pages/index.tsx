@@ -19,8 +19,6 @@ const Home: NextPage = () => {
 	return (
 		<div>
 			<Head>
-				<link rel='apple-touch-icon' href='/logo.png' />
-				<link rel='icon' href='/logo.png' />
 				{/* Meta Tags */}
 				{/* Primary Meta Tags */}
 				<title>Heet Vakharia: Full Stack Web Developer from India 🇮🇳</title>
@@ -44,7 +42,7 @@ const Home: NextPage = () => {
 					property='og:description'
 					content='Hi I am Heet Vakharia,a Full-Stack web developer from India 🇮🇳. I love creating and designing webapps. Currently in love with typescript '
 				/>
-				<meta property='og:image' content='https://i.imgur.com/mFqUN5P.png' />
+				<meta property='og:image' content='/images/preview.webp' />
 				{/* Twitter */}
 				<meta property='twitter:card' content='summary_large_image' />
 				<meta property='twitter:url' content='https://www.heetvakharia.in/' />
@@ -56,10 +54,7 @@ const Home: NextPage = () => {
 					property='twitter:description'
 					content='Hi I am Heet Vakharia,a Full-Stack web developer from India 🇮🇳. I love creating and designing webapps. Currently in love with typescript '
 				/>
-				<meta
-					property='twitter:image'
-					content='https://i.imgur.com/mFqUN5P.png'
-				/>
+				<meta property='twitter:image' content='/images/preview.webp' />
 			</Head>
 			<Toaster />
 			<Navbar

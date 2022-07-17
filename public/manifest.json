@@ -22,8 +22,8 @@
 	],
 	"start_url": ".",
 	"display": "standalone",
-	"theme_color": "#000000",
-	"background_color": "#ffffff",
+	"theme_color": "#ffffff",
+	"background_color": "#000000",
 	"description": "Hi I am Heet Vakharia,a Full-Stack web developer based in India 🇮🇳. I love creating and designing webapps. Currently in love with typescript",
 	"orientation": "any"
 }

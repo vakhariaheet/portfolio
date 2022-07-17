@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { getEduInfo } from '../../utils/utils';
 import styles from './Hero.module.scss';
 import Image from 'next/image';
-import Photo from './../../public/photo.png';
+import Photo from './../../public/images/photo.webp';
 export interface HomeProps {
 	setHomeRef: Dispatch<SetStateAction<HTMLElement | null>>;
 }
