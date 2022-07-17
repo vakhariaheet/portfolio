@@ -31,7 +31,7 @@ const Document = () => {
 					crossOrigin={'true'}
 				/>
 				<link
-					href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Dancing+Script&family=Itim&family=Quando&display=swap'
+					href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Dancing+Script&family=Itim&family=Quando&display=optional'
 					rel='stylesheet'
 				/>
 				<link
