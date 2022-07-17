@@ -2,9 +2,11 @@ import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
 const Document = () => {
 	return (
-		<Html>
+		<Html lang='en'>
 			<Head>
 				<meta charSet='utf-8' />
+				<meta httpEquiv='X-UA-Compatible' content='IE=edge' />
+				<meta name='language' content='US' />
 
 				<link
 					rel='apple-touch-icon'
@@ -18,7 +20,11 @@ const Document = () => {
 					href='/icons/32x32.png'
 				/>
 				<link rel='icon' type='image/png' sizes='16x16' href='/16x16.png' />
-				<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
+				<link
+					rel='mask-icon'
+					href='icons/safari-pinned-tab.svg'
+					color='#5bbad5'
+				/>
 				<meta name='msapplication-TileColor' content='#da532c' />
 				<meta name='theme-color' content='#fff' />
 				<link rel='manifest' href='/manifest.json' />

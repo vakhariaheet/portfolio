@@ -154,7 +154,7 @@ const Contact: React.FC<ContactProps> = ({ setContactRef }) => {
 					<textarea
 						name='body'
 						className={styles.contact__input}
-						id={styles.body}
+						id={`${styles.body} body`}
 						placeholder='Message'
 						value={contactInfo.body}
 						onChange={(e) =>
