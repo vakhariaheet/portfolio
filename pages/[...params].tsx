@@ -4,7 +4,7 @@ import Head from 'next/head';
 const Default = () => {
 	return (
 		<Head>
-			<meta http-equiv='refresh' content='0; url=https://heetvakharia.in' />
+			<meta httpEquiv='refresh' content='0; url=https://heetvakharia.in' />
 		</Head>
 	);
 };
