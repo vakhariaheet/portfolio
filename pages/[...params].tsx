@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-export default () => {
+const Default = () => {
 	return (
 		<Head>
 			<meta http-equiv='refresh' content='0; url=https://heetvakharia.in' />
 		</Head>
 	);
 };
+
+export default Default;
