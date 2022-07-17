@@ -16,12 +16,12 @@ const Document = () => {
 					crossOrigin={'true'}
 				/>
 				<link
-					href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Dancing+Script&family=Itim&family=Quando&display=optional'
+					href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Dancing+Script&family=Itim&family=Quando&display=swap'
 					rel='stylesheet'
 				/>
 				<link
 					rel='stylesheet'
-					href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&display=optional'
+					href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0'
 				/>
 				<Script
 					strategy='lazyOnload'
