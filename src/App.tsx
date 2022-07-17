@@ -7,7 +7,6 @@ import Home from './Components/Home/Home';
 import MyProjects from './Components/MyProjects/MyProjects';
 import MySkills from './Components/MySkills/MySkills';
 import Navbar from './Components/Navbar/Navbar';
-
 function App() {
 	const [homeRef, setHomeRef] = useState<HTMLDivElement | null>(null);
 	const [projectsRef, setProjectsRef] = useState<HTMLDivElement | null>(null);
