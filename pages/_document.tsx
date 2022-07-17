@@ -8,6 +8,8 @@ const Document = () => {
 
 				<meta name='theme-color' content='#000000' />
 				<link rel='manifest' href='/manifest.json' />
+				<link rel='apple-touch-icon' href='/logo.png' />
+				<link rel='icon' href='/logo.png' />
 				{/* Fonts */}
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 				<link
