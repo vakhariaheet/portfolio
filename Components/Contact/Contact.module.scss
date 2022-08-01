@@ -57,7 +57,7 @@
 		}
 	}
 
-	#body {
+	.textarea {
 		height: 30rem;
 		resize: vertical;
 		min-height: 20rem;
@@ -102,14 +102,14 @@
 .icon {
 	height: 6rem;
 	width: auto;
-	opacity: 0.8;
+	opacity: 0.8 !important;
 	transition: all 0.3s ease;
 	cursor: pointer;
 	padding: 1rem;
 	border-radius: 0.5rem;
 	&:hover {
-		opacity: 1;
-		transform: scale(1.1);
+		opacity: 1 !important;
+		transform: scale(1.1) !important;
 	}
 	&:focus {
 		outline: 1px solid #725ac1ff;
