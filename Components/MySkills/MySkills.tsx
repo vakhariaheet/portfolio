@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import styles from './MySkills.module.scss';
-import { skills } from '../../data/data';
 import { motion, useInView, Variants } from 'framer-motion';
 import { uid } from 'uid';
 import { Site } from '../../types';
