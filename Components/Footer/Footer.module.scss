@@ -16,7 +16,7 @@
 		&:last-of-type {
 			position: relative;
 			&::after {
-				content: '-  श्रीमद् भगवद्गीता';
+				content: attr(data-author);
 				display: block;
 				position: relative;
 				left: 80%;

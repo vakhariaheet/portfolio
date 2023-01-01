@@ -1,20 +1,28 @@
 import { useInView, Variants } from 'framer-motion';
-import React, { Dispatch, SetStateAction, useRef } from 'react';
-import { projects } from '../../data/data';
-import ProjectCard from '../ProjectCard/ProjectCard';
+import { GetStaticProps } from 'next';
+import React, { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { uid } from 'uid';
+import ProjectCard from '../ProjectCard/ProjectCard';
 import styles from './MyProjects.module.scss';
+import { Project, Site } from '../../types';
 export interface MyProjectsProps {
 	setProjectsRef: Dispatch<SetStateAction<null | HTMLElement>>;
+	projects: Project[];
+	site:Site
 }
 
-const MyProjects: React.FC<MyProjectsProps> = ({ setProjectsRef }) => {
+const MyProjects: React.FC<MyProjectsProps> = ({
+	setProjectsRef,
+	projects,
+	site
+}) => {
 	const ref = useRef<HTMLDivElement>(null);
 	const inView = useInView(ref, {
 		amount: 'some',
 		once: true,
 	});
+
 	const parent: Variants = {
 		show: {
 			transition: {
@@ -49,7 +57,7 @@ const MyProjects: React.FC<MyProjectsProps> = ({ setProjectsRef }) => {
 						  }
 				}
 			>
-				My Projects
+				{site.projectsTitle}
 			</motion.h4>
 			<motion.div
 				className={styles.projects__cards}
@@ -59,7 +67,7 @@ const MyProjects: React.FC<MyProjectsProps> = ({ setProjectsRef }) => {
 				ref={ref}
 			>
 				{projects.map((project) => (
-					<ProjectCard {...project} key={uid()} />
+					<ProjectCard project={project} key={uid()} />
 				))}
 			</motion.div>
 		</section>

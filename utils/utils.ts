@@ -1,6 +1,8 @@
 import { DateTime, Interval } from 'luxon';
 import { ScrollTo } from '../types';
-
+import imageUrlBuilder from '@sanity/image-url';
+import { client } from '../data/client';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 /**
  * Scroll To element on Event
  * @param {ScrollTo} options
@@ -48,3 +50,14 @@ export const getEduInfo = () => {
 		degree: startingYear > 3 ? 'Master of Science' : 'Bachelor of Science',
 	};
 };
+const builder = imageUrlBuilder(client);
+export const urlFor = (source: SanityImageSource) => {
+	return builder.image(source);
+};
+export const urlForImage = (image: any) => {
+	return builder.image(image);
+}
+export const urlForFile = (file: any) => { 
+	const [_file, id, extension] = file.asset._ref.split('-');
+	return `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${id}.${extension}`
+}

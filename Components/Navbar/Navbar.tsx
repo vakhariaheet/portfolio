@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({
 		>
 			<motion.li
 				tabIndex={1}
-				onPointerDown={(event) => {
+				onClick={(event) => {
 					scrollTo({ ele: homeRef, event, eventType: 'pointer' });
 					setTimeout(() => {
 						(event.target as any).blur();
@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({
 			</motion.li>
 			<motion.li
 				tabIndex={2}
-				onPointerDown={(event) => {
+				onClick={(event) => {
 					scrollTo({ ele: projectsRef, event, eventType: 'pointer' });
 					setTimeout(() => {
 						(event.target as HTMLInputElement).blur();
@@ -85,7 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({
 			</motion.li>
 			<motion.li
 				tabIndex={3}
-				onPointerDown={(event) => {
+				onClick={(event) => {
 					scrollTo({ ele: contactRef, event, eventType: 'pointer' });
 					setTimeout(() => {
 						(event.target as any).blur();

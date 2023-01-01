@@ -1,24 +1,17 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { motion } from 'framer-motion';
-import { getEduInfo } from '../../utils/utils';
+import { getEduInfo, urlFor, urlForFile } from '../../utils/utils';
 import styles from './Hero.module.scss';
 import Image from 'next/image';
 import Photo from './../../public/images/photo.webp';
+import { Site } from '../../types';
 export interface HomeProps {
 	setHomeRef: Dispatch<SetStateAction<HTMLElement | null>>;
+	site:Site
 }
 
-const Home: React.FC<HomeProps> = ({ setHomeRef }) => {
-	const onResumeDownload = async () => {
-		const blob = await fetch('/resume.pdf').then((resp) => resp.blob());
-		const anchor = document.createElement('a');
-		const url = URL.createObjectURL(blob);
-		anchor.href = url;
-		anchor.download = 'resume.pdf';
-		anchor.click();
-		anchor.remove();
-		URL.revokeObjectURL(url);
-	};
+const Home: React.FC<HomeProps> = ({ setHomeRef,site }) => {
+	
 	return (
 		<motion.section className={styles.home} ref={setHomeRef}>
 			<div className={styles.home__content}>
@@ -38,7 +31,7 @@ const Home: React.FC<HomeProps> = ({ setHomeRef }) => {
 					}}
 					className={styles.home__heading}
 				>
-					Hi, I am Heet Vakharia
+				{site.heroTitle}
 				</motion.h1>
 				<motion.p
 					className={styles.home__about}
@@ -55,13 +48,11 @@ const Home: React.FC<HomeProps> = ({ setHomeRef }) => {
 						type: 'spring',
 					}}
 				>
-					I am a passionate Full-Stack web developer based in India 🇮🇳. I love
-					creating and designing web apps. In my free time, I read books and
-					Harry Potter Fanfiction. I am currently doing my {getEduInfo().degree}{' '}
-					in Information Technology from GLS University ({getEduInfo().year}{' '}
-					year)
+					{
+						site.heroDescription
+					}
 				</motion.p>
-				<motion.button
+				<motion.a
 					initial={{
 						y: -50,
 						opacity: 0,
@@ -74,10 +65,10 @@ const Home: React.FC<HomeProps> = ({ setHomeRef }) => {
 						},
 					}}
 					className={styles.home__cta}
-					onPointerDown={onResumeDownload}
+					href={`${urlForFile(site.heroResume)}?dl=Resume.pdf`}
 				>
-					Download Resume
-				</motion.button>
+					{site.heroCTA}
+				</motion.a>
 			</div>
 			<div className={styles.home__image}>
 				<motion.div
@@ -95,11 +86,12 @@ const Home: React.FC<HomeProps> = ({ setHomeRef }) => {
 					}}
 				>
 					<Image
-						src={Photo}
+						src={urlFor(site.heroCoverImage).fit("max").url()}
 						alt='Heet Vakharia'
 						layout='fill'
 						priority={true}
 						placeholder='blur'
+						blurDataURL={urlFor(site.heroCoverImage).fit("max").blur(20).url()}
 					/>
 				</motion.div>
 			</div>

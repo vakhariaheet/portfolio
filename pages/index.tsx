@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Navbar from '../Components/Navbar/Navbar';
 import styles from '../styles/Home.module.css';
 import Hero from '../Components/Hero/Hero';
@@ -10,12 +9,19 @@ import MyProjects from '../Components/MyProjects/MyProjects';
 import Contact from '../Components/Contact/Contact';
 import Footer from '../Components/Footer/Footer';
 import { Toaster } from 'react-hot-toast';
+import { clarity } from 'react-microsoft-clarity';
+import { GetStaticProps } from 'next';
+import { client } from '../data/client';
+import { Project, Site } from '../types';
 
-const Home: NextPage = () => {
+const Home: NextPage<{ projects: Project[],site:Site }> = ({ projects,site }) => {
 	const [homeRef, setHomeRef] = useState<HTMLElement | null>(null);
 	const [projectsRef, setProjectsRef] = useState<HTMLElement | null>(null);
 	const [contactRef, setContactRef] = useState<HTMLElement | null>(null);
-
+	useEffect(() => {
+		clarity.init('dfo4awrivk');
+		console.log(site);
+	}, []);
 	return (
 		<div>
 			<Head>
@@ -63,13 +69,13 @@ const Home: NextPage = () => {
 				projectsRef={projectsRef}
 			/>
 			<main className={styles.main}>
-				<Hero setHomeRef={setHomeRef} />
-				<MySkills />
-				<MyProjects setProjectsRef={setProjectsRef} />
-				<Contact setContactRef={setContactRef} />
+				<Hero setHomeRef={setHomeRef} site={site} />
+				<MySkills site={site} />
+				<MyProjects site={site} setProjectsRef={setProjectsRef} projects={projects} />
+				<Contact site={site} setContactRef={setContactRef} />
 			</main>
 
-			<Footer />
+			<Footer site={site} />
 		</div>
 	);
 };
@@ -79,11 +85,12 @@ const Home: NextPage = () => {
 //- The data comes from a headless CMS.
 //- The data can be publicly cached (not user-specific).
 //- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
-import { GetStaticProps } from 'next';
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (context) => {
+	const projects = await client.fetch('*[_type=="projects"]');
+	const site = await client.fetch('*[_type=="site"][0]');
 	return {
-		props: {},
+		props: { projects, site },
 	};
 };
 export default Home;

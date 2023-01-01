@@ -3,9 +3,12 @@ import styles from './MySkills.module.scss';
 import { skills } from '../../data/data';
 import { motion, useInView, Variants } from 'framer-motion';
 import { uid } from 'uid';
-export interface MySkillsProps {}
+import { Site } from '../../types';
+export interface MySkillsProps {
+	site:Site
+}
 
-const MySkills: React.FC<MySkillsProps> = () => {
+const MySkills: React.FC<MySkillsProps> = ({site}) => {
 	const ref = useRef<HTMLDivElement>(null);
 	const inView = useInView(ref, {
 		amount: 'some',
@@ -45,7 +48,7 @@ const MySkills: React.FC<MySkillsProps> = () => {
 				animate={inView ? 'show' : 'hidden'}
 				initial={'hidden'}
 			>
-				My Skills
+				{site.skillsTitle}
 			</motion.h4>
 			<motion.div
 				className={styles.skills}
@@ -53,15 +56,15 @@ const MySkills: React.FC<MySkillsProps> = () => {
 				initial='hidden'
 				animate={inView ? 'show' : 'hidden'}
 			>
-				{skills.map((skill, index) => (
+				{site.heroTags.map((skill, index) => (
 					<motion.div
 						className={`${styles.skill} ${
-							skill.type ? styles[skill.type] : ''
+							skill.tagName ? styles[skill.tagType] : ''
 						}`}
 						variants={tag}
 						key={uid()}
 					>
-						{skill.name}
+						{skill.tagName}
 					</motion.div>
 				))}
 			</motion.div>
