@@ -20,7 +20,7 @@ const Home: NextPage<{ projects: Project[],site:Site }> = ({ projects,site }) =>
 	const [contactRef, setContactRef] = useState<HTMLElement | null>(null);
 	useEffect(() => {
 		clarity.init('dfo4awrivk');
-		console.log(site);
+		console.log(projects);
 	}, []);
 	return (
 		<div>
