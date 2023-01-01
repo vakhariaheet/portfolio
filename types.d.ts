@@ -5,7 +5,7 @@ declare module '*.pdf';
 export type ScrollToPointerProps = {
 	ele: HTMLElement | null;
 	eventType: 'pointer';
-	event: React.PointerEvent<HTMLElement>;
+	event:  React.MouseEvent<HTMLLIElement, MouseEvent>;
 	key?: undefined;
 };
 export type ScrollToKeyBoardProps = {

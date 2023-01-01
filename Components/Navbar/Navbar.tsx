@@ -86,7 +86,7 @@ const Navbar: React.FC<NavbarProps> = ({
 			<motion.li
 				tabIndex={3}
 				onClick={(event) => {
-					scrollTo({ ele: contactRef, event, eventType: 'pointer' });
+					scrollTo({ ele: contactRef, event:event, eventType: 'pointer' });
 					setTimeout(() => {
 						(event.target as any).blur();
 					}, 3000);
