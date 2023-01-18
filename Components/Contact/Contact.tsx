@@ -180,7 +180,7 @@ const Contact: React.FC<ContactProps> = ({ setContactRef, site }) => {
 						<motion.div
 							className={styles.icon}
 							tabIndex={0}
-							onClick={() => window.open('https://twitter.com/vakharia_heet')}
+							onClick={() => window.open(social.url)}
 							variants={logo}
 							key={social._key}
 						>
